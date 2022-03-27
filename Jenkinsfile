@@ -31,7 +31,7 @@ pipeline{
 			steps{
 				echo "Deploying an application"
 				echo "Deploying version {params.Version}"
-				echo "Deploying in env {param.Environ}"
+				echo "Deploying in env {params.Environ}"
 			}
 		}
         
