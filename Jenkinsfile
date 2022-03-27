@@ -30,8 +30,8 @@ pipeline{
 		stage("Deploy"){
 			steps{
 				echo "Deploying an application"
-				echo "Deploying version {params.Version}"
-				echo "Deploying in env {params.Environ}"
+				echo "Deploying version ${params.Version}"
+				echo "Deploying in env ${params.Environ}"
 			}
 		}
         
