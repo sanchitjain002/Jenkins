@@ -13,6 +13,7 @@ pipeline{
 			steps{
 				echo "Building an application"
 				echo "Version ${NEW_VERSION}"
+				bat label:'', script: "python C:\Users\sanchit jain\Desktop\Jenkins\demo.py"
 			}
 		}
 		stage("Test"){
