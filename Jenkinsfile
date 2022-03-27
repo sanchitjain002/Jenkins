@@ -13,11 +13,7 @@ pipeline{
 			steps{
 				echo "Building an application"
 				echo "Version ${NEW_VERSION}"
-				sh '''#!/bin/bash
-
-                    echo "Hello from bash"
-                    echo "Who I'm $SHELL"
-                '''
+				bat "python C:\Users\sanchit jain\Desktop\Jenkins\demo.py"
 			}
 		}
 		stage("Test"){
