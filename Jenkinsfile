@@ -1,7 +1,7 @@
 pipeline{
     agent any
 	parameters{
-		choice{name:'Version', choices:['1.1.0','1.2.0','1.3.0'],description:''}
+		choice(name:'Version', choices:['1.1.0','1.2.0','1.3.0'],description:'')
 		booleanParam(name:'executeTest',defaultValue:true,description:'')
 		string(name:'Environ',defaultValue:'',description:'deploying to this environment')
 	}
@@ -13,12 +13,13 @@ pipeline{
 			steps{
 				echo "Building an application"
 				echo "Version ${NEW_VERSION}"
+				bat "python C:\Users\sanchit jain\Desktop\Jenkins\demo.py"
 			}
 		}
 		stage("Test"){
 			when{
 				expression{
-				BRANCH_NAME='master'}
+				BRANCH_NAME=='master'}
 				expression{
 				params.executeTest
 				}
@@ -30,8 +31,8 @@ pipeline{
 		stage("Deploy"){
 			steps{
 				echo "Deploying an application"
-				echo "Deploying version {params.Version}"
-				echo "Deploying in env {param.Environ}"
+				echo "Deploying version ${params.Version}"
+				echo "Deploying in env ${params.Environ}"
 			}
 		}
         
